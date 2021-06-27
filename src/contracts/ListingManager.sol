@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.0;
 
-import './Structs/Price.sol';
-import './Structs/Listing.sol';
+import './structs/Price.sol';
+import './structs/Listing.sol';
 
 contract ListingManager {
 	mapping(uint => Listing) listings;
@@ -59,7 +59,7 @@ contract ListingManager {
 
 		for (uint i = 0; i < numOfPrices; i++) {
 			Price storage p = listing.prices[i];
-			
+
 			if (_dateTime > p.startEpochTime) {
 				if (p.endEpochTime == 0 || _dateTime < p.endEpochTime) {// if there is no end datetime to price
 					return int(i);
