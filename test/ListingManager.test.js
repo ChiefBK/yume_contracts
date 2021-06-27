@@ -2,7 +2,7 @@ const ListingManager = artifacts.require("ListingManager");
 
 require('chai').use(require('chai-as-promised')).should();
 
-contract('ListingManger', function([account1, account2, _account3]) {
+contract('ListingManager', function([account1, account2, _account3]) {
 	let listingManager;
 
 	before(async () => {
@@ -11,6 +11,8 @@ contract('ListingManger', function([account1, account2, _account3]) {
 
 	it('has no listings', async () => {
 		assert.equal(await listingManager.numOfListings(), 0);
+		assert.equal(await listingManager.getListingRules(0), 0);
+		assert.equal(await listingManager.getListingGuestInfo(0), 0);
 	})
 
 	describe('Contract Deployment', async () => {
@@ -80,7 +82,7 @@ contract('ListingManger', function([account1, account2, _account3]) {
 		});
 
 		describe('datetime specified falls within on the pricing windows', async () => {
-			it.only('returns the index of the first price', async () => {
+			it('returns the index of the first price', async () => {
 				const priceIndex = await listingManager.determinePrice(0, 1624247462)
 
 				assert.equal(priceIndex, 0);
