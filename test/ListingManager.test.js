@@ -2,7 +2,7 @@ const ListingManager = artifacts.require("ListingManager");
 
 require('chai').use(require('chai-as-promised')).should();
 
-contract('ListingManger', ([account1, account2, account3]) => {
+contract('ListingManger', function([account1, account2, _account3]) {
 	let listingManager;
 
 	before(async () => {
@@ -19,7 +19,7 @@ contract('ListingManger', ([account1, account2, account3]) => {
 		});
 	});
 
-	describe('createListing', async () => {
+	describe('#createListing', async () => {
 		before(async () => {
 			await listingManager.createListing(1, "test rules", "test guest info", { from: account1 });
 		});
@@ -53,7 +53,7 @@ contract('ListingManger', ([account1, account2, account3]) => {
 		})
 	})
 
-	describe('appendPrice', async () => {
+	describe('#appendPrice', async () => {
 		before(async () => {
 			await listingManager.createListing(1, "test rules", "test guest info", { from: account1 });
 			await listingManager.appendPrice(0, 10000, '0x555344', 1624247460, 1624593059);
@@ -73,14 +73,14 @@ contract('ListingManger', ([account1, account2, account3]) => {
 		})
 	})
 
-	describe('determinePrice', async () => {
+	describe('#determinePrice', async () => {
 		before(async () => {
 			await listingManager.createListing(1, "test rules", "test guest info", { from: account1 });
 			await listingManager.appendPrice(0, 10000, '0x555344', 1624247460, 1624593059);
 		});
 
 		describe('datetime specified falls within on the pricing windows', async () => {
-			it('returns the index of the first price', async () => {
+			it.only('returns the index of the first price', async () => {
 				const priceIndex = await listingManager.determinePrice(0, 1624247462)
 
 				assert.equal(priceIndex, 0);
@@ -96,7 +96,7 @@ contract('ListingManger', ([account1, account2, account3]) => {
 		})
 	})
 
-	describe('editListing', async () => {
+	describe('#editListing', async () => {
 		before(async () => {
 			await listingManager.createListing(1, "test rules", "test guest info", { from: account1 });
 		});
