@@ -10,6 +10,14 @@ contract ListingManager {
 	uint public numOfListings = 0;
 	address public owner;
 	string public name = "Listing Manager";
+	uint secsInDay = 86400;
+
+	// start and end times should be at midnight
+	modifier verifyStartEndTimes(uint _startTime, uint _endTime) {
+		require(_startTime % secsInDay == 0);
+		require(_endTime % secsInDay == 0);
+		_;
+	}
 
 	constructor() {
 		owner = msg.sender;
@@ -36,7 +44,7 @@ contract ListingManager {
 		return _listingId;
 	}
 
-	function appendPrice(uint _listingId, uint64 _amountInCents, bytes3 _currency, uint64 _startEpochTime, uint64 _endEpochTime) public returns (uint) {
+	function appendPrice(uint _listingId, uint64 _amountInCents, bytes3 _currency, uint64 _startEpochTime, uint64 _endEpochTime) public verifyStartEndTimes(_startEpochTime, _endEpochTime) returns (uint) {
 		Listing storage listing = listings[_listingId];
 		uint64 startTime;
 
@@ -52,9 +60,7 @@ contract ListingManager {
 		return listing.numOfPrices - 1;
 	}
 
-	function determinePrice(uint _listingId, uint64 _startTime, uint64 _endTime) public view returns (uint) {
-		uint secsInDay = 86400;
-
+	function determinePrice(uint _listingId, uint64 _startTime, uint64 _endTime) public view verifyStartEndTimes(_startTime, _endTime) returns (uint) {
 		Listing storage listing = listings[_listingId];
 
 		uint numOfPrices = listing.numOfPrices;

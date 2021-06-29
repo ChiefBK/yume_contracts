@@ -58,21 +58,28 @@ contract('ListingManager', function([account1, account2, _account3]) {
 	describe('#appendPrice', async () => {
 		before(async () => {
 			await listingManager.createListing(1, "test rules", "test guest info", { from: account1 });
-			await listingManager.appendPrice(0, 10000, '0x555344', 1624247460, 1624593059);
 		});
 
 		describe('listing', async () => {
 			it('has a price with correct values', async () => {
+				await listingManager.appendPrice(0, 10000, '0x555344', 1623283200, 1623542400);
+
 				assert.equal(await listingManager.getListingPriceAmount(0, 0), 10000);
 				assert.equal(await listingManager.getListingPriceCurrency(0, 0), '0x555344');
-				assert.equal(await listingManager.getListingPriceStartTime(0, 0), 1624247460);
-				assert.equal(await listingManager.getListingPriceEndTime(0, 0), 1624593059);
+				assert.equal(await listingManager.getListingPriceStartTime(0, 0), 1623283200);
+				assert.equal(await listingManager.getListingPriceEndTime(0, 0), 1623542400);
 			})
 
 			it('has incremented num of prices variable', async () => {
 				assert.equal(await listingManager.getListingNumPrices(0), 1);
 			})
-		})
+		});
+
+		describe('price begin or end times are not at midnight', async () => {
+			it('rejects the tx', async () => {
+				await listingManager.appendPrice(0, 10000, '0x555344', 1624247460, 1624593059).should.be.rejected;
+			})
+		});
 	})
 
 	describe('#editListing', async () => {
