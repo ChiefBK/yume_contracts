@@ -52,22 +52,31 @@ contract ListingManager {
 		return listing.numOfPrices - 1;
 	}
 
-	function determinePrice(uint _listingId, uint64 _dateTime) public view returns (int) {
+	function determinePrice(uint _listingId, uint64 _startTime, uint64 _endTime) public view returns (uint) {
+		uint secsInDay = 86400;
+
 		Listing storage listing = listings[_listingId];
 
 		uint numOfPrices = listing.numOfPrices;
+		uint totalPrice = 0;
+		uint currentPriceIndex = 0;
+		uint timeCursor = _startTime;
 
-		for (uint i = 0; i < numOfPrices; i++) {
-			Price storage p = listing.prices[i];
+		while (timeCursor <= _endTime && currentPriceIndex < numOfPrices) {
+			Price storage p = listing.prices[currentPriceIndex];
 
-			if (_dateTime > p.startEpochTime) {
-				if (p.endEpochTime == 0 || _dateTime < p.endEpochTime) {// if there is no end datetime to price
-					return int(i);
+			if (timeCursor >= p.startEpochTime) {
+				if (p.endEpochTime == 0 || timeCursor <= p.endEpochTime) { // if there is no end datetime OR cursor is before/equal to end time
+					totalPrice += p.amountInCents;
+					timeCursor += secsInDay;
+					continue;
 				}
 			}
+
+			currentPriceIndex++;
 		}
 
-		return -1;
+		return totalPrice;
 	}
 
 	function getListingOwner(uint _listingId) public view returns (address) {
