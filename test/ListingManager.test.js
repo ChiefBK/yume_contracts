@@ -75,29 +75,6 @@ contract('ListingManager', function([account1, account2, _account3]) {
 		})
 	})
 
-	describe('#determinePrice', async () => {
-		before(async () => {
-			await listingManager.createListing(1, "test rules", "test guest info", { from: account1 });
-			await listingManager.appendPrice(0, 10000, '0x555344', 1624247460, 1624593059);
-		});
-
-		describe('datetime specified falls within on the pricing windows', async () => {
-			it('returns the index of the first price', async () => {
-				const priceIndex = await listingManager.determinePrice(0, 1624247462)
-
-				assert.equal(priceIndex, 0);
-			})
-		})
-
-		describe('datetime specified outside the pricing windows', async () => {
-			it('returns -1', async () => {
-				const priceIndex = await listingManager.determinePrice(0, 1624247459)
-
-				assert.equal(priceIndex, -1);
-			})
-		})
-	})
-
 	describe('#editListing', async () => {
 		before(async () => {
 			await listingManager.createListing(1, "test rules", "test guest info", { from: account1 });
@@ -130,5 +107,20 @@ contract('ListingManager', function([account1, account2, _account3]) {
 				assert.equal(updatedGuestInfo, originalGuestInfo);
 			});
 		});
+	});
+
+	describe('#determinePriceAmount', async () => {
+		before(async () => {
+			await listingManager.createListing(1, "test rules", "test guest info", { from: account1 });
+			await listingManager.appendPrice(0, 10000, '0x555344', 1622505600, 1622592000); // June 1 to June 2
+			await listingManager.appendPrice(0, 15000, '0x555344', 1622678400, 1622851200); // June 3 to June 5
+			await listingManager.appendPrice(0, 11000, '0x555344', 1622937600, 1623024000); // June 6 to June 7
+			await listingManager.appendPrice(0, 9000, '0x555344', 1623110400, 0); // June 8 onwards
+		});
+
+		it('computes the right price', async () => {
+			// total price from June 1 to June 10
+			assert.equal(await listingManager.determinePrice(0, 1622505600, 1623283200), 114000);
+		})
 	});
 });
