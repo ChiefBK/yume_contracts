@@ -4,8 +4,7 @@ pragma solidity ^0.8.0;
 //import './PriceRule.sol';
 
 struct Booking {
-	uint listingId;
 	uint64 startEpochTime;
 	uint64 endEpochTime;
-	address bookingOwner;
+	address owner;
 }
