@@ -7,7 +7,6 @@ struct Listing {
 	string rules;
 	string guestInfo;
 	uint propertyId;
-	mapping(uint => Price) prices;
 	uint numOfPrices;
 	address owner;
 }

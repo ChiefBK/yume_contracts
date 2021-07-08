@@ -47,10 +47,10 @@ contract('ListingManager', function([account1, account2, _account3]) {
 				assert.equal(firstListingOwnerAddress, account1)
 
 				// doesn't have prices (all are zero)
-				assert.equal(await listingManager.getListingPriceAmount(0, 0), 0);
-				assert.equal(await listingManager.getListingPriceCurrency(0, 0), 0);
-				assert.equal(await listingManager.getListingPriceStartTime(0, 0), 0);
-				assert.equal(await listingManager.getListingPriceEndTime(0, 0), 0);
+				await listingManager.getListingPriceAmount(0, 0).should.be.rejected;
+				await listingManager.getListingPriceCurrency(0, 0).should.be.rejected;
+				await listingManager.getListingPriceStartTime(0, 0).should.be.rejected;
+				await listingManager.getListingPriceEndTime(0, 0).should.be.rejected;
 			});
 		})
 	})

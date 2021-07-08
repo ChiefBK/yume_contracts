@@ -3,21 +3,15 @@ pragma solidity ^0.8.0;
 
 import './structs/Price.sol';
 import './structs/Listing.sol';
+import "./Manager.sol";
 
-contract ListingManager {
+contract ListingManager is Manager {
 	mapping(uint => Listing) listings;
+	mapping(uint => Price[]) prices;
 
 	uint public numOfListings = 0;
 	address public owner;
 	string public name = "Listing Manager";
-	uint secsInDay = 86400;
-
-	// start and end times should be at midnight
-	modifier verifyStartEndTimes(uint _startTime, uint _endTime) {
-		require(_startTime % secsInDay == 0);
-		require(_endTime % secsInDay == 0);
-		_;
-	}
 
 	constructor() {
 		owner = msg.sender;
@@ -44,7 +38,7 @@ contract ListingManager {
 		return _listingId;
 	}
 
-	function appendPrice(uint _listingId, uint64 _amountInCents, bytes3 _currency, uint64 _startEpochTime, uint64 _endEpochTime) public verifyStartEndTimes(_startEpochTime, _endEpochTime) returns (uint) {
+	function appendPrice(uint _listingId, uint64 _amountInCents, bytes3 _currency, uint64 _startEpochTime, uint64 _endEpochTime) public isAtMidnight(_startEpochTime, _endEpochTime) returns (uint) {
 		Listing storage listing = listings[_listingId];
 		uint64 startTime;
 
@@ -55,21 +49,22 @@ contract ListingManager {
 		}
 
 		Price memory price = Price(_amountInCents, _currency, startTime, _endEpochTime);
-		listing.prices[listing.numOfPrices++] = price;
+		prices[_listingId].push(price);
 
-		return listing.numOfPrices - 1;
+		return listing.numOfPrices++;
 	}
 
-	function determinePrice(uint _listingId, uint64 _startTime, uint64 _endTime) public view verifyStartEndTimes(_startTime, _endTime) returns (uint) {
+	function determinePrice(uint _listingId, uint64 _startTime, uint64 _endTime) public view isAtMidnight(_startTime, _endTime) returns (uint) {
 		Listing storage listing = listings[_listingId];
 
+		uint secsInDay = 86400;
 		uint numOfPrices = listing.numOfPrices;
 		uint totalPrice = 0;
 		uint currentPriceIndex = 0;
 		uint timeCursor = _startTime;
 
 		while (timeCursor <= _endTime && currentPriceIndex < numOfPrices) {
-			Price storage p = listing.prices[currentPriceIndex];
+			Price storage p = prices[_listingId][currentPriceIndex];
 
 			if (timeCursor >= p.startEpochTime) {
 				if (p.endEpochTime == 0 || timeCursor <= p.endEpochTime) { // if there is no end datetime OR cursor is before/equal to end time
@@ -106,18 +101,26 @@ contract ListingManager {
 	}
 
 	function getListingPriceAmount(uint _listingId, uint _priceId) public view returns (uint64) {
-		return listings[_listingId].prices[_priceId].amountInCents;
+		require(getListingNumPrices(_listingId) > _priceId, "can not pass Price ID greater then length");
+
+		return prices[_listingId][_priceId].amountInCents;
 	}
 
 	function getListingPriceCurrency(uint _listingId, uint _priceId) public view returns (bytes3) {
-		return listings[_listingId].prices[_priceId].currency;
+		require(getListingNumPrices(_listingId) > _priceId, "can not pass Price ID greater then length");
+
+		return prices[_listingId][_priceId].currency;
 	}
 
 	function getListingPriceStartTime(uint _listingId, uint _priceId) public view returns (uint64) {
-		return listings[_listingId].prices[_priceId].startEpochTime;
+		require(getListingNumPrices(_listingId) > _priceId, "can not pass Price ID greater then length");
+
+		return prices[_listingId][_priceId].startEpochTime;
 	}
 
 	function getListingPriceEndTime(uint _listingId, uint _priceId) public view returns (uint64) {
-		return listings[_listingId].prices[_priceId].endEpochTime;
+		require(getListingNumPrices(_listingId) > _priceId, "can not pass Price ID greater then length");
+
+		return prices[_listingId][_priceId].endEpochTime;
 	}
 }
