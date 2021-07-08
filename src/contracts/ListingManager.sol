@@ -57,7 +57,6 @@ contract ListingManager is Manager {
 	function determinePrice(uint _listingId, uint64 _startTime, uint64 _endTime) public view isAtMidnight(_startTime, _endTime) returns (uint) {
 		Listing storage listing = listings[_listingId];
 
-		uint secsInDay = 86400;
 		uint numOfPrices = listing.numOfPrices;
 		uint totalPrice = 0;
 		uint currentPriceIndex = 0;
