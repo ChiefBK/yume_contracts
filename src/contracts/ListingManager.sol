@@ -1,13 +1,13 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.0;
 
-import './structs/Price.sol';
+import './structs/PriceRule.sol';
 import './structs/Listing.sol';
 import "./Manager.sol";
 
 contract ListingManager is Manager {
 	mapping(uint => Listing) listings;
-	mapping(uint => Price[]) prices;
+	mapping(uint => PriceRule[]) priceRules;
 
 	uint public numOfListings = 0;
 	address public owner;
@@ -48,8 +48,8 @@ contract ListingManager is Manager {
 			startTime = _startEpochTime;
 		}
 
-		Price memory price = Price(_amountInCents, _currency, startTime, _endEpochTime);
-		prices[_listingId].push(price);
+		PriceRule memory price = PriceRule(_amountInCents, _currency, startTime, _endEpochTime);
+		priceRules[_listingId].push(price);
 
 		return listing.numOfPrices++;
 	}
@@ -64,7 +64,7 @@ contract ListingManager is Manager {
 		uint timeCursor = _startTime;
 
 		while (timeCursor <= _endTime && currentPriceIndex < numOfPrices) {
-			Price storage p = prices[_listingId][currentPriceIndex];
+			PriceRule storage p = priceRules[_listingId][currentPriceIndex];
 
 			if (timeCursor >= p.startEpochTime) {
 				if (p.endEpochTime == 0 || timeCursor <= p.endEpochTime) { // if there is no end datetime OR cursor is before/equal to end time
@@ -103,24 +103,24 @@ contract ListingManager is Manager {
 	function getListingPriceAmount(uint _listingId, uint _priceId) public view returns (uint64) {
 		require(getListingNumPrices(_listingId) > _priceId, "can not pass Price ID greater then length");
 
-		return prices[_listingId][_priceId].amountInCents;
+		return priceRules[_listingId][_priceId].amountInCents;
 	}
 
 	function getListingPriceCurrency(uint _listingId, uint _priceId) public view returns (bytes3) {
 		require(getListingNumPrices(_listingId) > _priceId, "can not pass Price ID greater then length");
 
-		return prices[_listingId][_priceId].currency;
+		return priceRules[_listingId][_priceId].currency;
 	}
 
 	function getListingPriceStartTime(uint _listingId, uint _priceId) public view returns (uint64) {
 		require(getListingNumPrices(_listingId) > _priceId, "can not pass Price ID greater then length");
 
-		return prices[_listingId][_priceId].startEpochTime;
+		return priceRules[_listingId][_priceId].startEpochTime;
 	}
 
 	function getListingPriceEndTime(uint _listingId, uint _priceId) public view returns (uint64) {
 		require(getListingNumPrices(_listingId) > _priceId, "can not pass Price ID greater then length");
 
-		return prices[_listingId][_priceId].endEpochTime;
+		return priceRules[_listingId][_priceId].endEpochTime;
 	}
 }
