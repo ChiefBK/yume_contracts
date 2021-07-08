@@ -1,38 +1,44 @@
 {
   "contractName": "PriceManager",
   "abi": [],
-  "metadata": "{\"compiler\":{\"version\":\"0.8.5+commit.a4f2e591\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/Users/ian/Code/eth_contracts/yumebnb/yume_contracts/src/contracts/PriceManager.sol\":\"PriceManager\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/ian/Code/eth_contracts/yumebnb/yume_contracts/src/contracts/ListingManager.sol\":{\"keccak256\":\"0x842fb1b49c85c07475f492fa726dedcdf6c1ba72639d8676fc2fc0be58b67a60\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://9b858cc2e55f4965c5d360d877f672ba144054986f5c6d6313298da8725f6fc6\",\"dweb:/ipfs/QmX9Xu1zzBva2yaYUhwgH5TKBHd1puV5JThDoToqYjygL5\"]},\"/Users/ian/Code/eth_contracts/yumebnb/yume_contracts/src/contracts/PriceManager.sol\":{\"keccak256\":\"0xf8908110ae44f150ef9075ca7f74c8cf687b3c00d3d312d9c9dd6c4972ad2c0b\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://1c739f1ef35264def13dc5ba110bee8048205798244ed466ee13dd7e461cbf1e\",\"dweb:/ipfs/QmdbWAqjJ2GJQn2j8Fe4p3Eqk7DiGs6FngkwYhXEEwyiHr\"]},\"/Users/ian/Code/eth_contracts/yumebnb/yume_contracts/src/contracts/structs/Listing.sol\":{\"keccak256\":\"0x95dc0132b4d028b279e7f5b293d4f5d9715a356eb4456b97142a99957eef1ea7\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://31d5efe785f98ee96522cf3f0e72cefdeaec59f27038e94552cde4e178388475\",\"dweb:/ipfs/QmZfE6e3wRyWXitssNWSGNtzboT9jM3hr4d714wnfJVrng\"]},\"/Users/ian/Code/eth_contracts/yumebnb/yume_contracts/src/contracts/structs/Price.sol\":{\"keccak256\":\"0xe53876cf9fbf520534c0acc2b91a96a422f353748fe58ca0b4a9af7ff2cabf71\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://295d6f61441b74d164908249763184c6c4342a4a7da712342745e2c107791c1a\",\"dweb:/ipfs/QmdsSHM9MLQiiHPZsJkyaWoPnhGpwoQeYazKDfMgA9nfUw\"]}},\"version\":1}",
-  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea264697066735822122004c23cac24ce9c460e6d81895b0674135500eef25b0f144f0dc6a73f9acfdf0364736f6c63430008050033",
-  "deployedBytecode": "0x6080604052600080fdfea264697066735822122004c23cac24ce9c460e6d81895b0674135500eef25b0f144f0dc6a73f9acfdf0364736f6c63430008050033",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.5+commit.a4f2e591\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/Users/ian/Code/eth_contracts/yumebnb/yume_contracts/src/contracts/PriceManager.sol\":\"PriceManager\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/ian/Code/eth_contracts/yumebnb/yume_contracts/src/contracts/ListingManager.sol\":{\"keccak256\":\"0x1f49a60b10b745f85cd97161a925a8af64f4d1550708bfcf072011b0d1f4c344\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://d713ec44cd19be51f130b803b39de2efdf7959d573586d4de1999bc4276d0a7f\",\"dweb:/ipfs/QmUpLRRnwW3sod95b78JBgG159BJsZnTogQnKNhAEi88F9\"]},\"/Users/ian/Code/eth_contracts/yumebnb/yume_contracts/src/contracts/Manager.sol\":{\"keccak256\":\"0xa8e8bab5fe6dc10d7c93c23e901baa14687cc1315d996f7b6e1921c884984adb\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://4d041a0bd5e5a2bbf3b9a2d85b8c0ed6470924d4cdb686db80798f0ff996a2f6\",\"dweb:/ipfs/Qmc2Usg322HG6STrZPTVQbPdUvGxC3uyfjwuky59U8kk4F\"]},\"/Users/ian/Code/eth_contracts/yumebnb/yume_contracts/src/contracts/PriceManager.sol\":{\"keccak256\":\"0xf8908110ae44f150ef9075ca7f74c8cf687b3c00d3d312d9c9dd6c4972ad2c0b\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://1c739f1ef35264def13dc5ba110bee8048205798244ed466ee13dd7e461cbf1e\",\"dweb:/ipfs/QmdbWAqjJ2GJQn2j8Fe4p3Eqk7DiGs6FngkwYhXEEwyiHr\"]},\"/Users/ian/Code/eth_contracts/yumebnb/yume_contracts/src/contracts/libraries/DateTime.sol\":{\"keccak256\":\"0x98d74c3a77bcf295bf61479c89d6b2898a09e1327841d9edd6a0c8ad0c4079bd\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://9fda742de03aeb439f68962766265da89e25516fb1b4329f1b789b0e3d65a7be\",\"dweb:/ipfs/Qmc47wQfJRa8LGVbKUDuqRYJnsRP4J45HNqV1JtpGT92uW\"]},\"/Users/ian/Code/eth_contracts/yumebnb/yume_contracts/src/contracts/structs/Listing.sol\":{\"keccak256\":\"0x95dc0132b4d028b279e7f5b293d4f5d9715a356eb4456b97142a99957eef1ea7\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://31d5efe785f98ee96522cf3f0e72cefdeaec59f27038e94552cde4e178388475\",\"dweb:/ipfs/QmZfE6e3wRyWXitssNWSGNtzboT9jM3hr4d714wnfJVrng\"]},\"/Users/ian/Code/eth_contracts/yumebnb/yume_contracts/src/contracts/structs/Price.sol\":{\"keccak256\":\"0xe53876cf9fbf520534c0acc2b91a96a422f353748fe58ca0b4a9af7ff2cabf71\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://295d6f61441b74d164908249763184c6c4342a4a7da712342745e2c107791c1a\",\"dweb:/ipfs/QmdsSHM9MLQiiHPZsJkyaWoPnhGpwoQeYazKDfMgA9nfUw\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea2646970667358221220641afc1ac4e59f583762f20577cd1065d06d6380592b26c2d8c5801430eb7dad64736f6c63430008050033",
+  "deployedBytecode": "0x6080604052600080fdfea2646970667358221220641afc1ac4e59f583762f20577cd1065d06d6380592b26c2d8c5801430eb7dad64736f6c63430008050033",
   "immutableReferences": {},
   "generatedSources": [],
   "deployedGeneratedSources": [],
-  "sourceMap": "96:1419:1:-:0;;;;;;;;;;;;;;;;;;;",
-  "deployedSourceMap": "96:1419:1:-:0;;;;;",
+  "sourceMap": "96:1419:3:-:0;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "96:1419:3:-:0;;;;;",
   "source": "// SPDX-License-Identifier: UNLICENSED\npragma solidity ^0.8.0;\n\nimport './ListingManager.sol';\n\ncontract PriceManager {\n\t// address public owner;\n\t// ListingManager listingManager;\n\n\t// constructor(ListingManager _listingManager) {\n\t// \towner = msg.sender;\n\t// \tlistingManager = _listingManager;\n\t// }\n\n\t// function appendPrice(uint _listingId, uint64 _amountInCents, bytes3 _currency, uint64 _startEpochTime, uint64 _endEpochTime) public returns (uint) {\n\t// \tListing storage listing = listingManager.listings()[_listingId];\n\t// \tuint64 startTime;\n\n\t// \tif (_startEpochTime == 0) {\n\t// \t\tstartTime = uint64(block.timestamp);\n\t// \t} else {\n\t// \t\tstartTime = _startEpochTime;\n\t// \t}\n\n\t// \tPrice memory price = Price(_amountInCents, _currency, startTime, _endEpochTime);\n\t// \tlisting.prices[listing.numOfPrices++] = price;\n\n\t// \treturn listing.numOfPrices - 1;\n\t// }\n\n\t// function determinePrice(uint _listingId, uint64 _dateTime) public view returns (int) {\n\t// \tListing storage listing = listingManager.listings()[_listingId];\n\n\t// \tuint numOfPrices = listing.numOfPrices;\n\n\t// \tfor (uint i = 0; i < numOfPrices; i++) {\n\t// \t\tPrice storage p = listing.prices[i];\n\t\t\t\n\t// \t\tif (_dateTime > p.startEpochTime) {\n\t// \t\t\tif (p.endEpochTime == 0 || _dateTime < p.endEpochTime) {// if there is no end datetime to price\n\t// \t\t\t\treturn int(i);\n\t// \t\t\t}\n\t// \t\t}\n\t// \t}\n\n\t// \treturn -1;\n\t// }\n\n\t// function getPriceAmount(uint _listingId, uint _priceIndex) public returns (uint64) {\n\t// \tPrice memory p = \n\t// \treturn \n\t// }\n}",
   "sourcePath": "/Users/ian/Code/eth_contracts/yumebnb/yume_contracts/src/contracts/PriceManager.sol",
   "ast": {
     "absolutePath": "/Users/ian/Code/eth_contracts/yumebnb/yume_contracts/src/contracts/PriceManager.sol",
     "exportedSymbols": {
+      "DateTime": [
+        766
+      ],
       "Listing": [
-        502
+        791
       ],
       "ListingManager": [
-        209
+        437
+      ],
+      "Manager": [
+        456
       ],
       "Price": [
-        513
+        802
       ],
       "PriceManager": [
-        213
+        460
       ]
     },
-    "id": 214,
+    "id": 461,
     "license": "UNLICENSED",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 211,
+        "id": 458,
         "literals": [
           "solidity",
           "^",
@@ -40,17 +46,17 @@
           ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "39:23:1"
+        "src": "39:23:3"
       },
       {
         "absolutePath": "/Users/ian/Code/eth_contracts/yumebnb/yume_contracts/src/contracts/ListingManager.sol",
         "file": "./ListingManager.sol",
-        "id": 212,
+        "id": 459,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 214,
-        "sourceUnit": 210,
-        "src": "64:30:1",
+        "scope": 461,
+        "sourceUnit": 438,
+        "src": "64:30:3",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -60,43 +66,49 @@
         "contractDependencies": [],
         "contractKind": "contract",
         "fullyImplemented": true,
-        "id": 213,
+        "id": 460,
         "linearizedBaseContracts": [
-          213
+          460
         ],
         "name": "PriceManager",
-        "nameLocation": "105:12:1",
+        "nameLocation": "105:12:3",
         "nodeType": "ContractDefinition",
         "nodes": [],
-        "scope": 214,
-        "src": "96:1419:1",
+        "scope": 461,
+        "src": "96:1419:3",
         "usedErrors": []
       }
     ],
-    "src": "39:1476:1"
+    "src": "39:1476:3"
   },
   "legacyAST": {
     "absolutePath": "/Users/ian/Code/eth_contracts/yumebnb/yume_contracts/src/contracts/PriceManager.sol",
     "exportedSymbols": {
+      "DateTime": [
+        766
+      ],
       "Listing": [
-        502
+        791
       ],
       "ListingManager": [
-        209
+        437
+      ],
+      "Manager": [
+        456
       ],
       "Price": [
-        513
+        802
       ],
       "PriceManager": [
-        213
+        460
       ]
     },
-    "id": 214,
+    "id": 461,
     "license": "UNLICENSED",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 211,
+        "id": 458,
         "literals": [
           "solidity",
           "^",
@@ -104,17 +116,17 @@
           ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "39:23:1"
+        "src": "39:23:3"
       },
       {
         "absolutePath": "/Users/ian/Code/eth_contracts/yumebnb/yume_contracts/src/contracts/ListingManager.sol",
         "file": "./ListingManager.sol",
-        "id": 212,
+        "id": 459,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 214,
-        "sourceUnit": 210,
-        "src": "64:30:1",
+        "scope": 461,
+        "sourceUnit": 438,
+        "src": "64:30:3",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -124,28 +136,36 @@
         "contractDependencies": [],
         "contractKind": "contract",
         "fullyImplemented": true,
-        "id": 213,
+        "id": 460,
         "linearizedBaseContracts": [
-          213
+          460
         ],
         "name": "PriceManager",
-        "nameLocation": "105:12:1",
+        "nameLocation": "105:12:3",
         "nodeType": "ContractDefinition",
         "nodes": [],
-        "scope": 214,
-        "src": "96:1419:1",
+        "scope": 461,
+        "src": "96:1419:3",
         "usedErrors": []
       }
     ],
-    "src": "39:1476:1"
+    "src": "39:1476:3"
   },
   "compiler": {
     "name": "solc",
     "version": "0.8.5+commit.a4f2e591.Emscripten.clang"
   },
-  "networks": {},
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0x1A1F63847F47FfCc75daDf165320BaF96E397021",
+      "transactionHash": "0xa018d2d933b1d7df1557082c3d9ef3157bbcdec2450d919154d8a02272f929a6"
+    }
+  },
   "schemaVersion": "3.4.1",
-  "updatedAt": "2021-06-27T02:40:13.972Z",
+  "updatedAt": "2021-07-08T21:29:23.293Z",
+  "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
     "methods": {},
