@@ -15,30 +15,30 @@
     "absolutePath": "/Users/ian/Code/eth_contracts/yumebnb/yume_contracts/src/contracts/PriceManager.sol",
     "exportedSymbols": {
       "DateTime": [
-        899
+        972
       ],
       "Listing": [
-        921
+        994
       ],
       "ListingManager": [
-        567
+        640
       ],
       "Manager": [
-        589
+        662
       ],
       "PriceManager": [
-        593
+        666
       ],
       "PriceRule": [
-        932
+        1005
       ]
     },
-    "id": 594,
+    "id": 667,
     "license": "UNLICENSED",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 591,
+        "id": 664,
         "literals": [
           "solidity",
           "^",
@@ -51,11 +51,11 @@
       {
         "absolutePath": "/Users/ian/Code/eth_contracts/yumebnb/yume_contracts/src/contracts/ListingManager.sol",
         "file": "./ListingManager.sol",
-        "id": 592,
+        "id": 665,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 594,
-        "sourceUnit": 568,
+        "scope": 667,
+        "sourceUnit": 641,
         "src": "64:30:3",
         "symbolAliases": [],
         "unitAlias": ""
@@ -66,15 +66,15 @@
         "contractDependencies": [],
         "contractKind": "contract",
         "fullyImplemented": true,
-        "id": 593,
+        "id": 666,
         "linearizedBaseContracts": [
-          593
+          666
         ],
         "name": "PriceManager",
         "nameLocation": "105:12:3",
         "nodeType": "ContractDefinition",
         "nodes": [],
-        "scope": 594,
+        "scope": 667,
         "src": "96:1419:3",
         "usedErrors": []
       }
@@ -85,30 +85,30 @@
     "absolutePath": "/Users/ian/Code/eth_contracts/yumebnb/yume_contracts/src/contracts/PriceManager.sol",
     "exportedSymbols": {
       "DateTime": [
-        899
+        972
       ],
       "Listing": [
-        921
+        994
       ],
       "ListingManager": [
-        567
+        640
       ],
       "Manager": [
-        589
+        662
       ],
       "PriceManager": [
-        593
+        666
       ],
       "PriceRule": [
-        932
+        1005
       ]
     },
-    "id": 594,
+    "id": 667,
     "license": "UNLICENSED",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 591,
+        "id": 664,
         "literals": [
           "solidity",
           "^",
@@ -121,11 +121,11 @@
       {
         "absolutePath": "/Users/ian/Code/eth_contracts/yumebnb/yume_contracts/src/contracts/ListingManager.sol",
         "file": "./ListingManager.sol",
-        "id": 592,
+        "id": 665,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 594,
-        "sourceUnit": 568,
+        "scope": 667,
+        "sourceUnit": 641,
         "src": "64:30:3",
         "symbolAliases": [],
         "unitAlias": ""
@@ -136,15 +136,15 @@
         "contractDependencies": [],
         "contractKind": "contract",
         "fullyImplemented": true,
-        "id": 593,
+        "id": 666,
         "linearizedBaseContracts": [
-          593
+          666
         ],
         "name": "PriceManager",
         "nameLocation": "105:12:3",
         "nodeType": "ContractDefinition",
         "nodes": [],
-        "scope": 594,
+        "scope": 667,
         "src": "96:1419:3",
         "usedErrors": []
       }
@@ -164,8 +164,7 @@
     }
   },
   "schemaVersion": "3.4.1",
-  "updatedAt": "2021-07-08T22:38:16.308Z",
-  "networkType": "ethereum",
+  "updatedAt": "2021-07-08T23:31:05.310Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},
