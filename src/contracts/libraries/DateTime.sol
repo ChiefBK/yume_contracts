@@ -8,7 +8,15 @@ library DateTime {
     function verifyMidnight(uint _time1, uint _time2) public pure {
         uint secsInDay = 86400;
 
-        require(_time1 % secsInDay == 0);
-        require(_time2 % secsInDay == 0);
+        require(_time1 % secsInDay == 0, "time arg not at midnight");
+        require(_time2 % secsInDay == 0, "time arg not at midnight");
+    }
+
+    // Verifies that both times occur at midnight of any day
+    // _time1: epoch time
+    function verifyMidnight(uint _time1) public pure {
+        uint secsInDay = 86400;
+
+        require(_time1 % secsInDay == 0, "time arg not at midnight");
     }
 }

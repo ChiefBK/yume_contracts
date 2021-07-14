@@ -38,7 +38,7 @@ contract ListingManager is Manager {
 		return _listingId;
 	}
 
-	function appendPrice(uint _listingId, uint64 _amountInCents, bytes3 _currency, uint64 _startEpochTime, uint64 _endEpochTime) public isAtMidnight(_startEpochTime, _endEpochTime) returns (uint) {
+	function appendPrice(uint _listingId, uint64 _amountInCents, bytes3 _currency, uint64 _startEpochTime, uint64 _endEpochTime) public isAtMidnight2(_startEpochTime, _endEpochTime) returns (uint) {
 		Listing storage listing = listings[_listingId];
 		uint64 startTime;
 
@@ -54,7 +54,7 @@ contract ListingManager is Manager {
 		return listing.numOfPrices++;
 	}
 
-	function determinePrice(uint _listingId, uint64 _startTime, uint64 _endTime) public view isAtMidnight(_startTime, _endTime) returns (uint) {
+	function determinePrice(uint _listingId, uint64 _startTime, uint64 _endTime) public view isAtMidnight2(_startTime, _endTime) returns (uint) {
 		Listing storage listing = listings[_listingId];
 
 		uint numOfPrices = listing.numOfPrices;
