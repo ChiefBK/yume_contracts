@@ -14,7 +14,7 @@ contract BookingManager is Manager {
     // The keys of ZZ are epoch times (at midnight) which map to a booking ID (the value)
     mapping(uint => mapping(uint => uint)) listingsToBookingDates;
 
-    function createBooking(uint _listingId, uint64 _startTime, uint64 _endTime) public isAtMidnight(_startTime, _endTime) returns (uint) {
+    function createBooking(uint _listingId, uint64 _startTime, uint64 _endTime) public isAtMidnight2(_startTime, _endTime) returns (uint) {
         uint bookingId = bookingIndex++;
 
         Booking storage newBooking = bookings[bookingId];
@@ -28,7 +28,7 @@ contract BookingManager is Manager {
         return bookingId;
     }
 
-    function addBookingDatesToListing(uint _listingId, uint64 _startTime, uint64 _endTime, uint _bookingId) private isAtMidnight(_startTime, _endTime) {
+    function addBookingDatesToListing(uint _listingId, uint64 _startTime, uint64 _endTime, uint _bookingId) private isAtMidnight2(_startTime, _endTime) {
         uint timeCursor = _startTime;
 
         while (timeCursor <= _endTime) {
@@ -40,8 +40,23 @@ contract BookingManager is Manager {
         }
     }
 
-    function getBookingOnDate(uint _listingId, uint _dateTime) public view returns (uint) {
+    function getBookingOnDate(uint _listingId, uint _dateTime) public view isAtMidnight(_dateTime) returns (uint) {
         return listingsToBookingDates[_listingId][_dateTime];
+    }
+
+    function getBookingsInRange(uint _listingId, uint _startTime, uint _endTime) public view isAtMidnight2(_startTime, _endTime) returns (uint[] memory) {
+        uint numberOfPossibleBookings = ((_endTime - _startTime) / secsInDay) + 1;
+        uint[] memory bookingSubset = new uint[](numberOfPossibleBookings);
+
+        uint timeCursor = _startTime;
+
+        while (timeCursor <= _endTime) {
+            uint i = (timeCursor - _startTime) / secsInDay;
+            bookingSubset[i] = getBookingOnDate(_listingId, timeCursor);
+            timeCursor += secsInDay;
+        }
+
+        return bookingSubset;
     }
 
     function getBookingStart(uint _bookingId) public view returns (uint64) {
