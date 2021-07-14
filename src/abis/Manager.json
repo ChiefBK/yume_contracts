@@ -1,32 +1,32 @@
 {
   "contractName": "Manager",
   "abi": [],
-  "metadata": "{\"compiler\":{\"version\":\"0.8.5+commit.a4f2e591\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/Users/ian/Code/eth_contracts/yumebnb/yume_contracts/src/contracts/Manager.sol\":\"Manager\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/ian/Code/eth_contracts/yumebnb/yume_contracts/src/contracts/Manager.sol\":{\"keccak256\":\"0x26a989320bb1a00c7893df809e3a9a87ef5c8d9f429ae00c32c3137408919d16\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://20203735a79d61233a9d6cca0858a1df11923f63da0b74af9615975bfb49e697\",\"dweb:/ipfs/QmTxBmB29o8Tb2ZQF5YvQ2YYogSjzCnVBLd9vD9tMFh5gp\"]},\"/Users/ian/Code/eth_contracts/yumebnb/yume_contracts/src/contracts/libraries/DateTime.sol\":{\"keccak256\":\"0x98d74c3a77bcf295bf61479c89d6b2898a09e1327841d9edd6a0c8ad0c4079bd\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://9fda742de03aeb439f68962766265da89e25516fb1b4329f1b789b0e3d65a7be\",\"dweb:/ipfs/Qmc47wQfJRa8LGVbKUDuqRYJnsRP4J45HNqV1JtpGT92uW\"]}},\"version\":1}",
-  "bytecode": "0x608060405262015180600055348015601657600080fd5b50603f8060246000396000f3fe6080604052600080fdfea2646970667358221220f55a8a040a9caa1d173bc05646a92fa3764ec35665d758cee579d99a935abab664736f6c63430008050033",
-  "deployedBytecode": "0x6080604052600080fdfea2646970667358221220f55a8a040a9caa1d173bc05646a92fa3764ec35665d758cee579d99a935abab664736f6c63430008050033",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.5+commit.a4f2e591\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/Users/ian/Code/eth_contracts/yumebnb/yume_contracts/src/contracts/Manager.sol\":\"Manager\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/ian/Code/eth_contracts/yumebnb/yume_contracts/src/contracts/Manager.sol\":{\"keccak256\":\"0x3729c778904641032ed17e751da85607dd832168106d461b7dc279cdd6c66e74\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://8d06fe6167c88cea240d7afd7100c71a0b14d69242645f42dc82374d37c73ae5\",\"dweb:/ipfs/Qme3R8Csp5hWxXji4gtRhoHsfn82TEpYeK7DXgpykE5fD2\"]},\"/Users/ian/Code/eth_contracts/yumebnb/yume_contracts/src/contracts/libraries/DateTime.sol\":{\"keccak256\":\"0xb4ebf45484d02c4a4ed823faefd50d7c49f13bea98f76f8120ef46f6f45bf775\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://55c22a93c312b9dacd91c5227f6c275f51b47a42a41e2608183257580ed3a2a9\",\"dweb:/ipfs/QmXB3HSHTxtJejjUPrxdwm3Vo5rDyoNdPNrP1n1eu95caU\"]}},\"version\":1}",
+  "bytecode": "0x608060405262015180600055348015601657600080fd5b50603f8060246000396000f3fe6080604052600080fdfea26469706673582212202f02c63c8e59014d49019ce65b1555fb62348ef14eafbaf5b88f7997890a56d364736f6c63430008050033",
+  "deployedBytecode": "0x6080604052600080fdfea26469706673582212202f02c63c8e59014d49019ce65b1555fb62348ef14eafbaf5b88f7997890a56d364736f6c63430008050033",
   "immutableReferences": {},
   "generatedSources": [],
   "deployedGeneratedSources": [],
-  "sourceMap": "100:169:2:-:0;;;140:5;123:22;;100:169;;;;;;;;;;;;;;;;",
-  "deployedSourceMap": "100:169:2:-:0;;;;;",
-  "source": "// SPDX-License-Identifier: UNLICENSED\npragma solidity ^0.8.0;\n\nimport './libraries/DateTime.sol';\n\ncontract Manager {\n    uint secsInDay = 86400;\n\n    modifier isAtMidnight(uint _time1, uint _time2) {\n        DateTime.verifyMidnight(_time1, _time2);\n        _;\n    }\n}\n",
+  "sourceMap": "100:270:2:-:0;;;140:5;123:22;;100:270;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "100:270:2:-:0;;;;;",
+  "source": "// SPDX-License-Identifier: UNLICENSED\npragma solidity ^0.8.0;\n\nimport './libraries/DateTime.sol';\n\ncontract Manager {\n    uint secsInDay = 86400;\n\n    modifier isAtMidnight2(uint _time1, uint _time2) {\n        DateTime.verifyMidnight(_time1, _time2);\n        _;\n    }\n\n    modifier isAtMidnight(uint _time1) {\n        DateTime.verifyMidnight(_time1);\n        _;\n    }\n}\n",
   "sourcePath": "/Users/ian/Code/eth_contracts/yumebnb/yume_contracts/src/contracts/Manager.sol",
   "ast": {
     "absolutePath": "/Users/ian/Code/eth_contracts/yumebnb/yume_contracts/src/contracts/Manager.sol",
     "exportedSymbols": {
       "DateTime": [
-        899
+        1002
       ],
       "Manager": [
-        589
+        674
       ]
     },
-    "id": 590,
+    "id": 675,
     "license": "UNLICENSED",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 569,
+        "id": 642,
         "literals": [
           "solidity",
           "^",
@@ -39,11 +39,11 @@
       {
         "absolutePath": "/Users/ian/Code/eth_contracts/yumebnb/yume_contracts/src/contracts/libraries/DateTime.sol",
         "file": "./libraries/DateTime.sol",
-        "id": 570,
+        "id": 643,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 590,
-        "sourceUnit": 900,
+        "scope": 675,
+        "sourceUnit": 1003,
         "src": "64:34:2",
         "symbolAliases": [],
         "unitAlias": ""
@@ -54,9 +54,9 @@
         "contractDependencies": [],
         "contractKind": "contract",
         "fullyImplemented": true,
-        "id": 589,
+        "id": 674,
         "linearizedBaseContracts": [
-          589
+          674
         ],
         "name": "Manager",
         "nameLocation": "109:7:2",
@@ -64,12 +64,12 @@
         "nodes": [
           {
             "constant": false,
-            "id": 573,
+            "id": 646,
             "mutability": "mutable",
             "name": "secsInDay",
             "nameLocation": "128:9:2",
             "nodeType": "VariableDeclaration",
-            "scope": 589,
+            "scope": 674,
             "src": "123:22:2",
             "stateVariable": true,
             "storageLocation": "default",
@@ -78,7 +78,7 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 571,
+              "id": 644,
               "name": "uint",
               "nodeType": "ElementaryTypeName",
               "src": "123:4:2",
@@ -89,7 +89,7 @@
             },
             "value": {
               "hexValue": "3836343030",
-              "id": 572,
+              "id": 645,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -107,32 +107,32 @@
           },
           {
             "body": {
-              "id": 587,
+              "id": 660,
               "nodeType": "Block",
-              "src": "200:67:2",
+              "src": "201:67:2",
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 582,
+                        "id": 655,
                         "name": "_time1",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 575,
-                        "src": "234:6:2",
+                        "referencedDeclaration": 648,
+                        "src": "235:6:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
                       {
-                        "id": 583,
+                        "id": 656,
                         "name": "_time2",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 577,
-                        "src": "242:6:2",
+                        "referencedDeclaration": 650,
+                        "src": "243:6:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -151,32 +151,32 @@
                         }
                       ],
                       "expression": {
-                        "id": 579,
+                        "id": 652,
                         "name": "DateTime",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 899,
-                        "src": "210:8:2",
+                        "referencedDeclaration": 1002,
+                        "src": "211:8:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_DateTime_$899_$",
+                          "typeIdentifier": "t_type$_t_contract$_DateTime_$1002_$",
                           "typeString": "type(library DateTime)"
                         }
                       },
-                      "id": 581,
+                      "id": 654,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "verifyMidnight",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 898,
-                      "src": "210:23:2",
+                      "referencedDeclaration": 983,
+                      "src": "211:23:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_delegatecall_pure$_t_uint256_$_t_uint256_$returns$__$",
                         "typeString": "function (uint256,uint256) pure"
                       }
                     },
-                    "id": 584,
+                    "id": 657,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -184,41 +184,41 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "210:39:2",
+                    "src": "211:39:2",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 585,
+                  "id": 658,
                   "nodeType": "ExpressionStatement",
-                  "src": "210:39:2"
+                  "src": "211:39:2"
                 },
                 {
-                  "id": 586,
+                  "id": 659,
                   "nodeType": "PlaceholderStatement",
-                  "src": "259:1:2"
+                  "src": "260:1:2"
                 }
               ]
             },
-            "id": 588,
-            "name": "isAtMidnight",
-            "nameLocation": "161:12:2",
+            "id": 661,
+            "name": "isAtMidnight2",
+            "nameLocation": "161:13:2",
             "nodeType": "ModifierDefinition",
             "parameters": {
-              "id": 578,
+              "id": 651,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 575,
+                  "id": 648,
                   "mutability": "mutable",
                   "name": "_time1",
-                  "nameLocation": "179:6:2",
+                  "nameLocation": "180:6:2",
                   "nodeType": "VariableDeclaration",
-                  "scope": 588,
-                  "src": "174:11:2",
+                  "scope": 661,
+                  "src": "175:11:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -226,10 +226,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 574,
+                    "id": 647,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "174:4:2",
+                    "src": "175:4:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -239,13 +239,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 577,
+                  "id": 650,
                   "mutability": "mutable",
                   "name": "_time2",
-                  "nameLocation": "192:6:2",
+                  "nameLocation": "193:6:2",
                   "nodeType": "VariableDeclaration",
-                  "scope": 588,
-                  "src": "187:11:2",
+                  "scope": 661,
+                  "src": "188:11:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -253,10 +253,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 576,
+                    "id": 649,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "187:4:2",
+                    "src": "188:4:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -265,36 +265,159 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "173:26:2"
+              "src": "174:26:2"
             },
-            "src": "152:115:2",
+            "src": "152:116:2",
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 672,
+              "nodeType": "Block",
+              "src": "309:59:2",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 668,
+                        "name": "_time1",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 663,
+                        "src": "343:6:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "id": 665,
+                        "name": "DateTime",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1002,
+                        "src": "319:8:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_DateTime_$1002_$",
+                          "typeString": "type(library DateTime)"
+                        }
+                      },
+                      "id": 667,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "verifyMidnight",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 1001,
+                      "src": "319:23:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_delegatecall_pure$_t_uint256_$returns$__$",
+                        "typeString": "function (uint256) pure"
+                      }
+                    },
+                    "id": 669,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "319:31:2",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 670,
+                  "nodeType": "ExpressionStatement",
+                  "src": "319:31:2"
+                },
+                {
+                  "id": 671,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "360:1:2"
+                }
+              ]
+            },
+            "id": 673,
+            "name": "isAtMidnight",
+            "nameLocation": "283:12:2",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 664,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 663,
+                  "mutability": "mutable",
+                  "name": "_time1",
+                  "nameLocation": "301:6:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 673,
+                  "src": "296:11:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 662,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "296:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "295:13:2"
+            },
+            "src": "274:94:2",
             "virtual": false,
             "visibility": "internal"
           }
         ],
-        "scope": 590,
-        "src": "100:169:2",
+        "scope": 675,
+        "src": "100:270:2",
         "usedErrors": []
       }
     ],
-    "src": "39:231:2"
+    "src": "39:332:2"
   },
   "legacyAST": {
     "absolutePath": "/Users/ian/Code/eth_contracts/yumebnb/yume_contracts/src/contracts/Manager.sol",
     "exportedSymbols": {
       "DateTime": [
-        899
+        1002
       ],
       "Manager": [
-        589
+        674
       ]
     },
-    "id": 590,
+    "id": 675,
     "license": "UNLICENSED",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 569,
+        "id": 642,
         "literals": [
           "solidity",
           "^",
@@ -307,11 +430,11 @@
       {
         "absolutePath": "/Users/ian/Code/eth_contracts/yumebnb/yume_contracts/src/contracts/libraries/DateTime.sol",
         "file": "./libraries/DateTime.sol",
-        "id": 570,
+        "id": 643,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 590,
-        "sourceUnit": 900,
+        "scope": 675,
+        "sourceUnit": 1003,
         "src": "64:34:2",
         "symbolAliases": [],
         "unitAlias": ""
@@ -322,9 +445,9 @@
         "contractDependencies": [],
         "contractKind": "contract",
         "fullyImplemented": true,
-        "id": 589,
+        "id": 674,
         "linearizedBaseContracts": [
-          589
+          674
         ],
         "name": "Manager",
         "nameLocation": "109:7:2",
@@ -332,12 +455,12 @@
         "nodes": [
           {
             "constant": false,
-            "id": 573,
+            "id": 646,
             "mutability": "mutable",
             "name": "secsInDay",
             "nameLocation": "128:9:2",
             "nodeType": "VariableDeclaration",
-            "scope": 589,
+            "scope": 674,
             "src": "123:22:2",
             "stateVariable": true,
             "storageLocation": "default",
@@ -346,7 +469,7 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 571,
+              "id": 644,
               "name": "uint",
               "nodeType": "ElementaryTypeName",
               "src": "123:4:2",
@@ -357,7 +480,7 @@
             },
             "value": {
               "hexValue": "3836343030",
-              "id": 572,
+              "id": 645,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -375,32 +498,32 @@
           },
           {
             "body": {
-              "id": 587,
+              "id": 660,
               "nodeType": "Block",
-              "src": "200:67:2",
+              "src": "201:67:2",
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 582,
+                        "id": 655,
                         "name": "_time1",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 575,
-                        "src": "234:6:2",
+                        "referencedDeclaration": 648,
+                        "src": "235:6:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
                       {
-                        "id": 583,
+                        "id": 656,
                         "name": "_time2",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 577,
-                        "src": "242:6:2",
+                        "referencedDeclaration": 650,
+                        "src": "243:6:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -419,32 +542,32 @@
                         }
                       ],
                       "expression": {
-                        "id": 579,
+                        "id": 652,
                         "name": "DateTime",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 899,
-                        "src": "210:8:2",
+                        "referencedDeclaration": 1002,
+                        "src": "211:8:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_DateTime_$899_$",
+                          "typeIdentifier": "t_type$_t_contract$_DateTime_$1002_$",
                           "typeString": "type(library DateTime)"
                         }
                       },
-                      "id": 581,
+                      "id": 654,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "verifyMidnight",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 898,
-                      "src": "210:23:2",
+                      "referencedDeclaration": 983,
+                      "src": "211:23:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_delegatecall_pure$_t_uint256_$_t_uint256_$returns$__$",
                         "typeString": "function (uint256,uint256) pure"
                       }
                     },
-                    "id": 584,
+                    "id": 657,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -452,41 +575,41 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "210:39:2",
+                    "src": "211:39:2",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 585,
+                  "id": 658,
                   "nodeType": "ExpressionStatement",
-                  "src": "210:39:2"
+                  "src": "211:39:2"
                 },
                 {
-                  "id": 586,
+                  "id": 659,
                   "nodeType": "PlaceholderStatement",
-                  "src": "259:1:2"
+                  "src": "260:1:2"
                 }
               ]
             },
-            "id": 588,
-            "name": "isAtMidnight",
-            "nameLocation": "161:12:2",
+            "id": 661,
+            "name": "isAtMidnight2",
+            "nameLocation": "161:13:2",
             "nodeType": "ModifierDefinition",
             "parameters": {
-              "id": 578,
+              "id": 651,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 575,
+                  "id": 648,
                   "mutability": "mutable",
                   "name": "_time1",
-                  "nameLocation": "179:6:2",
+                  "nameLocation": "180:6:2",
                   "nodeType": "VariableDeclaration",
-                  "scope": 588,
-                  "src": "174:11:2",
+                  "scope": 661,
+                  "src": "175:11:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -494,10 +617,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 574,
+                    "id": 647,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "174:4:2",
+                    "src": "175:4:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -507,13 +630,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 577,
+                  "id": 650,
                   "mutability": "mutable",
                   "name": "_time2",
-                  "nameLocation": "192:6:2",
+                  "nameLocation": "193:6:2",
                   "nodeType": "VariableDeclaration",
-                  "scope": 588,
-                  "src": "187:11:2",
+                  "scope": 661,
+                  "src": "188:11:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -521,10 +644,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 576,
+                    "id": 649,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "187:4:2",
+                    "src": "188:4:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -533,19 +656,142 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "173:26:2"
+              "src": "174:26:2"
             },
-            "src": "152:115:2",
+            "src": "152:116:2",
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 672,
+              "nodeType": "Block",
+              "src": "309:59:2",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 668,
+                        "name": "_time1",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 663,
+                        "src": "343:6:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "id": 665,
+                        "name": "DateTime",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1002,
+                        "src": "319:8:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_DateTime_$1002_$",
+                          "typeString": "type(library DateTime)"
+                        }
+                      },
+                      "id": 667,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "verifyMidnight",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 1001,
+                      "src": "319:23:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_delegatecall_pure$_t_uint256_$returns$__$",
+                        "typeString": "function (uint256) pure"
+                      }
+                    },
+                    "id": 669,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "319:31:2",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 670,
+                  "nodeType": "ExpressionStatement",
+                  "src": "319:31:2"
+                },
+                {
+                  "id": 671,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "360:1:2"
+                }
+              ]
+            },
+            "id": 673,
+            "name": "isAtMidnight",
+            "nameLocation": "283:12:2",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 664,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 663,
+                  "mutability": "mutable",
+                  "name": "_time1",
+                  "nameLocation": "301:6:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 673,
+                  "src": "296:11:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 662,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "296:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "295:13:2"
+            },
+            "src": "274:94:2",
             "virtual": false,
             "visibility": "internal"
           }
         ],
-        "scope": 590,
-        "src": "100:169:2",
+        "scope": 675,
+        "src": "100:270:2",
         "usedErrors": []
       }
     ],
-    "src": "39:231:2"
+    "src": "39:332:2"
   },
   "compiler": {
     "name": "solc",
@@ -560,8 +806,7 @@
     }
   },
   "schemaVersion": "3.4.1",
-  "updatedAt": "2021-07-08T22:38:16.041Z",
-  "networkType": "ethereum",
+  "updatedAt": "2021-07-14T03:47:32.029Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},
