@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.0;
 
-import './structs/Booking.sol';
+import "./structs/Booking.sol";
 import "./Manager.sol";
 
 contract BookingManager is Manager {
