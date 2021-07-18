@@ -7,6 +7,7 @@ contract PropertyManager {
     mapping(uint => Property) properties;
 
     uint public numOfProperties = 0;
+    uint public propertyIndex = 1;
     address public owner;
     string public name = "Property Manager";
 
@@ -27,7 +28,7 @@ contract PropertyManager {
         uint32 _sqFootage,
         uint8 _maxNumOfGuests
     ) public returns (uint) {
-        Property storage property = properties[numOfProperties++];
+        Property storage property = properties[propertyIndex];
         property.city = _city;
         property.state = _state;
         property.numOfBedrooms = _numOfBedrooms;
@@ -40,7 +41,9 @@ contract PropertyManager {
         property.sqFootage = _sqFootage;
         property.maxNumOfGuests = _maxNumOfGuests;
 
-        return numOfProperties - 1;
+        numOfProperties++;
+
+        return propertyIndex++;
     }
 
     function getPropertyCity(uint _propertyId) public view returns (string memory) {

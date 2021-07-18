@@ -56,17 +56,17 @@ contract('PropertyManager', function([account1, account2, _account3]) {
 
 		describe('Created Property', async () => {
 			it('has correct properties', async () => {
-				assert.equal(await propertyManager.getPropertyCity(0), city);
-				assert.equal(await propertyManager.getPropertyState(0), state);
-				assert.equal(await propertyManager.getPropertyBedrooms(0), bedrooms);
-				assert.equal(await propertyManager.getPropertyFullBaths(0), fullBaths);
-				assert.equal(await propertyManager.getPropertyHalfBaths(0), halfBaths);
-				assert.equal(await propertyManager.getPropertyKingBeds(0), kingBeds);
-				assert.equal(await propertyManager.getPropertyQueenBeds(0), queenBeds);
-				assert.equal(await propertyManager.getPropertyFullBeds(0), fullBeds);
-				assert.equal(await propertyManager.getPropertyTwinBeds(0), twinBeds);
-				assert.equal(await propertyManager.getPropertySqFootage(0), sqFootage);
-				assert.equal(await propertyManager.getPropertyMaxGuests(0), maxGuests);
+				assert.equal(await propertyManager.getPropertyCity(1), city);
+				assert.equal(await propertyManager.getPropertyState(1), state);
+				assert.equal(await propertyManager.getPropertyBedrooms(1), bedrooms);
+				assert.equal(await propertyManager.getPropertyFullBaths(1), fullBaths);
+				assert.equal(await propertyManager.getPropertyHalfBaths(1), halfBaths);
+				assert.equal(await propertyManager.getPropertyKingBeds(1), kingBeds);
+				assert.equal(await propertyManager.getPropertyQueenBeds(1), queenBeds);
+				assert.equal(await propertyManager.getPropertyFullBeds(1), fullBeds);
+				assert.equal(await propertyManager.getPropertyTwinBeds(1), twinBeds);
+				assert.equal(await propertyManager.getPropertySqFootage(1), sqFootage);
+				assert.equal(await propertyManager.getPropertyMaxGuests(1), maxGuests);
 			});
 		})
 	})

@@ -10,6 +10,7 @@ contract ListingManager is Manager {
 	mapping(uint => PriceRule[]) priceRules;
 
 	uint public numOfListings = 0;
+	uint public listingIndex = 1;
 	address public owner;
 	string public name = "Listing Manager";
 
@@ -18,13 +19,15 @@ contract ListingManager is Manager {
 	}
 
 	function createListing(uint _propertyId, string memory _rules, string memory _guestInfo) public returns (uint) {
-		Listing storage newListing = listings[numOfListings++];
+		Listing storage newListing = listings[listingIndex];
 		newListing.rules = _rules;
 		newListing.guestInfo = _guestInfo;
 		newListing.propertyId = _propertyId;
 		newListing.owner = msg.sender;
 
-		return numOfListings - 1;
+		numOfListings++;
+
+		return listingIndex++;
 	}
 
 	function editListing(uint _listingId, string memory _rules, string memory _guestInfo) public returns (uint) {
