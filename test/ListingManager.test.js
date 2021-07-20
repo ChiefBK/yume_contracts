@@ -62,12 +62,14 @@ contract('ListingManager', function([account1, account2, _account3]) {
 
 		describe('listing', async () => {
 			it('has a price with correct values', async () => {
-				await listingManager.appendPrice(1, 10000, '0x555344', 1623283200, 1623542400);
+				// $100 -- 0.058 ETH
+				await listingManager.appendPrice(1, 10000, '0x555344', '58000000000000000', 1623283200, 1623542400);
 
 				assert.equal(await listingManager.getListingPriceAmount(1, 0), 10000);
 				assert.equal(await listingManager.getListingPriceCurrency(1, 0), '0x555344');
 				assert.equal(await listingManager.getListingPriceStartTime(1, 0), 1623283200);
 				assert.equal(await listingManager.getListingPriceEndTime(1, 0), 1623542400);
+				assert.equal(await listingManager.getListingPriceWei(1, 0), '58000000000000000');
 			})
 
 			it('has incremented num of prices variable', async () => {
@@ -119,15 +121,15 @@ contract('ListingManager', function([account1, account2, _account3]) {
 	describe('#determinePriceAmount', async () => {
 		before(async () => {
 			await listingManager.createListing(1, "test rules", "test guest info", { from: account1 });
-			await listingManager.appendPrice(1, 10000, '0x555344', 1622505600, 1622592000); // June 1 to June 2
-			await listingManager.appendPrice(1, 15000, '0x555344', 1622678400, 1622851200); // June 3 to June 5
-			await listingManager.appendPrice(1, 11000, '0x555344', 1622937600, 1623024000); // June 6 to June 7
-			await listingManager.appendPrice(1, 9000, '0x555344', 1623110400, 0); // June 8 onwards
+			await listingManager.appendPrice(1, 10000, '0x555344', '58000000000000000', 1622505600, 1622592000); // June 1 to June 2
+			await listingManager.appendPrice(1, 15000, '0x555344', '86000000000000000', 1622678400, 1622851200); // June 3 to June 5
+			await listingManager.appendPrice(1, 11000, '0x555344', '63000000000000000', 1622937600, 1623024000); // June 6 to June 7
+			await listingManager.appendPrice(1, 9000, '0x555344', '51000000000000000', 1623110400, 0); // June 8 onwards
 		});
 
 		it('computes the right price', async () => {
 			// total price from June 1 to June 10
-			assert.equal(await listingManager.determinePrice(1, 1622505600, 1623283200), 114000);
+			assert.equal(await listingManager.determinePrice(1, 1622505600, 1623283200), '653000000000000000');
 		})
 	});
 });

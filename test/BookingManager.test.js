@@ -1,4 +1,5 @@
 const BookingManager = artifacts.require("BookingManager");
+const ListingManager = artifacts.require("ListingManager");
 
 require('chai').use(require('chai-as-promised')).should();
 
@@ -6,7 +7,8 @@ contract('BookingManager', function([account1, account2, account3]) {
     let bookingManager;
 
     beforeEach(async () => {
-        bookingManager = await BookingManager.new();
+        const listingManager = await ListingManager.new();
+        bookingManager = await BookingManager.new(listingManager.address);
     });
 
     it('has no bookings', async () => {

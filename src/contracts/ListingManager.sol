@@ -41,7 +41,7 @@ contract ListingManager is Manager {
 		return _listingId;
 	}
 
-	function appendPrice(uint _listingId, uint64 _amountInCents, bytes3 _currency, uint64 _startEpochTime, uint64 _endEpochTime) public isAtMidnight2(_startEpochTime, _endEpochTime) returns (uint) {
+	function appendPrice(uint _listingId, uint64 _amountInCents, bytes3 _currency, uint _amountInWei, uint64 _startEpochTime, uint64 _endEpochTime) public isAtMidnight2(_startEpochTime, _endEpochTime) returns (uint) {
 		Listing storage listing = listings[_listingId];
 		uint64 startTime;
 
@@ -51,7 +51,7 @@ contract ListingManager is Manager {
 			startTime = _startEpochTime;
 		}
 
-		PriceRule memory price = PriceRule(_amountInCents, _currency, startTime, _endEpochTime);
+		PriceRule memory price = PriceRule(_currency, _amountInCents, startTime, _endEpochTime, _amountInWei);
 		priceRules[_listingId].push(price);
 
 		return listing.numOfPrices++;
@@ -70,7 +70,7 @@ contract ListingManager is Manager {
 
 			if (timeCursor >= p.startEpochTime) {
 				if (p.endEpochTime == 0 || timeCursor <= p.endEpochTime) { // if there is no end datetime OR cursor is before/equal to end time
-					totalPrice += p.amountInCents;
+					totalPrice += p.amountInWei;
 					timeCursor += secsInDay;
 					continue;
 				}
@@ -124,5 +124,11 @@ contract ListingManager is Manager {
 		require(getListingNumPrices(_listingId) > _priceId, "can not pass Price ID greater then length");
 
 		return priceRules[_listingId][_priceId].endEpochTime;
+	}
+
+	function getListingPriceWei(uint _listingId, uint _priceId) public view returns (uint) {
+		require(getListingNumPrices(_listingId) > _priceId, "can not pass Price ID greater then length");
+
+		return priceRules[_listingId][_priceId].amountInWei;
 	}
 }

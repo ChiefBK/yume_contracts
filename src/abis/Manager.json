@@ -801,12 +801,13 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x2e37B3b1f6784ffB4f840b2584A4be98dA320a7a",
-      "transactionHash": "0x3024c646dd63254cde4aa30cc277ffad17b9aa405020d598587eb2395ac2a853"
+      "address": "0x561c04876697e44397294de9B4b1AeCFc8397c85",
+      "transactionHash": "0x222d456ca83f8a5e242baabb058077672a04405ed97294d80432e1fb6da2d751"
     }
   },
   "schemaVersion": "3.4.1",
-  "updatedAt": "2021-07-18T23:20:13.250Z",
+  "updatedAt": "2021-07-20T05:05:03.552Z",
+  "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
     "methods": {},

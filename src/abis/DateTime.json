@@ -17,7 +17,8 @@
       "name": "verifyMidnight",
       "outputs": [],
       "stateMutability": "pure",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -30,7 +31,8 @@
       "name": "verifyMidnight",
       "outputs": [],
       "stateMutability": "pure",
-      "type": "function"
+      "type": "function",
+      "constant": true
     }
   ],
   "metadata": "{\"compiler\":{\"version\":\"0.8.5+commit.a4f2e591\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_time1\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_time2\",\"type\":\"uint256\"}],\"name\":\"verifyMidnight\",\"outputs\":[],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_time1\",\"type\":\"uint256\"}],\"name\":\"verifyMidnight\",\"outputs\":[],\"stateMutability\":\"pure\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/Users/ian/Code/eth_contracts/yumebnb/yume_contracts/src/contracts/libraries/DateTime.sol\":\"DateTime\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/ian/Code/eth_contracts/yumebnb/yume_contracts/src/contracts/libraries/DateTime.sol\":{\"keccak256\":\"0x249938a38918dcc515f0bb50c8975765f1db96d6f118980f01d22c5fe482d2c8\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://34e41beb18f53811cdaf6ed37666b89c5933e44d30781cee3f836ac9b1815bdf\",\"dweb:/ipfs/QmVxtGwS5UsP3866JmfbaWRxWHeQPmGj8AdU42afJoCPGS\"]}},\"version\":1}",
@@ -2951,12 +2953,13 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x20cf9e5c1c4970E6FCFcD45fA67bFEe28481114a",
-      "transactionHash": "0xde9727d7a47bb21cd1ca1ee3526feafc5994ad4e58957ba1a5e8e1a0578fe354"
+      "address": "0xd2CC24364D3A61686ff2574f979411a1BC0CDdBb",
+      "transactionHash": "0x5166d55c905eb6ab2287d6430b2823d8c964ef2fe8a418dc4de779acbe1ec5d8"
     }
   },
   "schemaVersion": "3.4.1",
-  "updatedAt": "2021-07-18T23:20:13.258Z",
+  "updatedAt": "2021-07-20T05:05:04.148Z",
+  "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
     "methods": {},
