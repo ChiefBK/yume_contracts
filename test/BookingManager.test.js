@@ -5,9 +5,10 @@ require('chai').use(require('chai-as-promised')).should();
 
 contract('BookingManager', function([account1, account2, account3]) {
     let bookingManager;
+    let listingManager;
 
     beforeEach(async () => {
-        const listingManager = await ListingManager.new();
+        listingManager = await ListingManager.new();
         bookingManager = await BookingManager.new(listingManager.address);
     });
 
@@ -23,12 +24,14 @@ contract('BookingManager', function([account1, account2, account3]) {
     });
 
     describe('#createBooking', async () => {
-        const startDate = 1625443200, // 2021-July-5
-            endDate = 1625702400, // 2021-July-8
+        const startDate = 1625443200,   // 2021-July-5
+            endDate = 1625702400,       // 2021-July-8
             listingId = 1;
 
         beforeEach(async () => {
-            await bookingManager.createBooking(listingId, startDate, endDate, { from: account1 })
+            await listingManager.createListing(1, "test rules", "test guest info", { from: account1 });
+            await listingManager.appendPrice(listingId, 10000, '0x555344', '51000000000000000', startDate, 0)
+            await bookingManager.createBooking(listingId, startDate, endDate, { from: account1, value: '204000000000000000' })
         });
 
         it('has created one booking', async () => {
@@ -44,8 +47,8 @@ contract('BookingManager', function([account1, account2, account3]) {
             });
 
             it('has correctly booked dates for listing', async () => {
-                assert.equal(await bookingManager.getBookingOnDate(listingId, startDate), 1);
-                assert.equal(await bookingManager.getBookingOnDate(listingId, 1625788800), 0, 'No booking on 2021-July-9');
+                assert.equal(await bookingManager.getBookingOnDate(1, startDate), 1);
+                assert.equal(await bookingManager.getBookingOnDate(1, 1625788800), 0, 'No booking on 2021-July-9');
             });
         });
     });

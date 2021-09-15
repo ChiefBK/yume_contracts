@@ -7,4 +7,5 @@ struct Booking {
 	uint64 startEpochTime;
 	uint64 endEpochTime;
 	address owner;
+	uint costInWei;
 }

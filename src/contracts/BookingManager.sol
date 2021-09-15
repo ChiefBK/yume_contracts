@@ -36,6 +36,7 @@ contract BookingManager is Manager {
         newBooking.startEpochTime = _startTime;
         newBooking.endEpochTime = _endTime;
         newBooking.owner = msg.sender;
+        newBooking.costInWei = expectedPrice;
 
         addBookingDatesToListing(_listingId, _startTime, _endTime, bookingId);
         numOfBookings++;
